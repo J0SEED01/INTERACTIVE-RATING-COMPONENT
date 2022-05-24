@@ -11,20 +11,28 @@ document.addEventListener('click', e => {
     }
 
     if(e.target.matches('#submit')){
-        document.querySelector('.card--home').style.setProperty('opacity',0)
-        document.querySelector('.card--home').style.setProperty('visibility','hidden')
-        document.querySelector('.card--thank').style.setProperty('opacity',1)
-        document.querySelector('.card--thank').style.setProperty('visibility','visible')    
-        document.querySelector('.card--thank .card__select').textContent = `You selected ${number} out of 5`
+
+        if(number === 0){
+            e.preventDefault()
+        }
+        else{
+            document.querySelector('.card--home').style.setProperty('opacity',0)
+            document.querySelector('.card--home').style.setProperty('visibility','hidden')
+            document.querySelector('.card--thank').style.setProperty('opacity',1)
+            document.querySelector('.card--thank').style.setProperty('visibility','visible')    
+            document.querySelector('.card--thank .card__select').textContent = `You selected ${number} out of 5`
     
-        setTimeout(function() {
+            setTimeout(function() {
 
-            document.querySelector('.card--home').style.setProperty('opacity',1)
-            document.querySelector('.card--home').style.setProperty('visibility','visible')    
-            document.querySelector('.card--thank').style.setProperty('opacity',0)
-            document.querySelector('.card--thank').style.setProperty('visibility','hidden')
+                document.querySelector('.card--home').style.setProperty('opacity',1)
+                document.querySelector('.card--home').style.setProperty('visibility','visible')    
+                document.querySelector('.card--thank').style.setProperty('opacity',0)
+                document.querySelector('.card--thank').style.setProperty('visibility','hidden')
 
-        }, 2000)
+            }, 2000)
+        }
+
+        
 
     }
 })
