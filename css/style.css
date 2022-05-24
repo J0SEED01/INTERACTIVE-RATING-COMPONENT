@@ -1,0 +1,125 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    background-color:hsl(216, 12%, 8%);
+    color:hsl(0, 0%, 100%);
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-image: linear-gradient(hsl(213,19%,18%), hsl(216,12%,8%));
+    max-width: 350px;
+    border-radius: 20px;
+    position: absolute;
+    padding: 45px 30px 20px;
+    box-shadow: 0 2px 5px 0 hsl(213, 19%, 18%);
+}
+
+.card--home{
+    z-index: 10;
+}
+
+.card--thank{
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card__img{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background-color: hsl(213, 19%, 18%);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.data__paragraph{
+    color: hsl(217, 12%, 63%);
+}
+
+.card__number{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.number__opc,
+.card__submit{
+    transition: background-color .5s ease ;
+}
+
+.number__opc{
+    background-color: hsl(213, 19%, 18%);
+    padding: 15px 20px;
+    border-radius: 50%;
+}
+
+.card__submit{
+    background-color: hsl(25, 97%, 53%);
+    border: none;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.number--select{
+    background-color: hsl(217, 12%, 63%);
+}
+
+
+.card__select{
+    display: inline-block;
+    background-color: hsl(213, 19%, 18%);
+    color: hsl(25, 97%, 53%);
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+@media (hover: hover){
+    .number__opc:hover,
+    .card__submit{
+        cursor: pointer;
+    }
+
+    .number__opc:hover{
+        background-color: hsl(25, 97%, 53%);
+    }
+
+    .card__submit:hover{
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(25, 97%, 53%);
+    }
+}
+
+@media only screen and (max-width: 360px){
+
+    .number__opc{
+        font-size: 12px;
+        padding: 10px 15px;
+        border-radius: 50%;
+    }
+    
+}
